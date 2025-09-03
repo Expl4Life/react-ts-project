@@ -1,5 +1,6 @@
-import 'react'
-import Counter from './components/Counter'
+import 'react';
+
+import Counter from './components/Counter';
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
                 <p>Vite, React и TypeScript</p>
             </footer>
         </div>
-    )
+    );
 }
 
-export default App
+export default App;

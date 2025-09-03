@@ -1,8 +1,9 @@
-import React from 'react'
-import { useCounter } from '@/hooks/useCounter'
+import React from 'react';
+
+import { useCounter } from '@/hooks/useCounter';
 
 const Counter: React.FC = () => {
-    const { count, increment, decrement, reset } = useCounter(0)
+    const { count, increment, decrement, reset } = useCounter(0);
 
     return (
         <div className="counter">
@@ -22,7 +23,7 @@ const Counter: React.FC = () => {
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Counter
+export default Counter;

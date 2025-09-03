@@ -1,50 +1,50 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
-import Counter from '@/components/Counter'
+import Counter from '@/components/Counter';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 describe('Counter', () => {
     it('should render with initial count of 0', () => {
-        render(<Counter />)
+        render(<Counter />);
 
-        expect(screen.getByText('Счетчик')).toBeInTheDocument()
-        expect(screen.getByText('0')).toBeInTheDocument()
-    })
+        expect(screen.getByText('Счетчик')).toBeInTheDocument();
+        expect(screen.getByText('0')).toBeInTheDocument();
+    });
 
     it('should increment count when increment button is clicked', () => {
-        render(<Counter />)
+        render(<Counter />);
 
-        const incrementButton = screen.getByText('+1')
-        fireEvent.click(incrementButton)
+        const incrementButton = screen.getByText('+1');
+        fireEvent.click(incrementButton);
 
-        expect(screen.getByText('1')).toBeInTheDocument()
-    })
+        expect(screen.getByText('1')).toBeInTheDocument();
+    });
 
     it('should reset count to 0 when reset button is clicked', () => {
-        render(<Counter />)
+        render(<Counter />);
 
         // Сначала увеличим счетчик
-        const incrementButton = screen.getByText('+1')
-        fireEvent.click(incrementButton)
-        fireEvent.click(incrementButton)
-        expect(screen.getByText('2')).toBeInTheDocument()
+        const incrementButton = screen.getByText('+1');
+        fireEvent.click(incrementButton);
+        fireEvent.click(incrementButton);
+        expect(screen.getByText('2')).toBeInTheDocument();
 
         // Затем сбросим
-        const resetButton = screen.getByText('Сброс')
-        fireEvent.click(resetButton)
+        const resetButton = screen.getByText('Сброс');
+        fireEvent.click(resetButton);
 
-        expect(screen.getByText('0')).toBeInTheDocument()
-    })
+        expect(screen.getByText('0')).toBeInTheDocument();
+    });
 
     it('should handle multiple increments correctly', () => {
-        render(<Counter />)
+        render(<Counter />);
 
-        const incrementButton = screen.getByText('+1')
+        const incrementButton = screen.getByText('+1');
 
         // Нажмем 5 раз
         for (let i = 0; i < 5; i++) {
-            fireEvent.click(incrementButton)
+            fireEvent.click(incrementButton);
         }
 
-        expect(screen.getByText('5')).toBeInTheDocument()
-    })
-})
+        expect(screen.getByText('5')).toBeInTheDocument();
+    });
+});
